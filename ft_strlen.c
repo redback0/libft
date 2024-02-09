@@ -6,11 +6,11 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:43:51 by njackson          #+#    #+#             */
-/*   Updated: 2024/01/27 12:43:58 by njackson         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:28:06 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	len;
 

@@ -6,7 +6,7 @@
 	memchr
 	memcmp
 X	strlen
-	strdup
+X	strdup
 X	strcpy
 X	strncpy
 	strcat
