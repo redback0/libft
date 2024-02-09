@@ -19,7 +19,7 @@ X	strncpy
 	strcmp
 	strncmp
 	atoi
-	isalpha
+-	isalpha
 	isdigit
 	isalnum
 	isascii
@@ -42,10 +42,14 @@ X	strncpy
 	ft_strtrim
 	ft_strsplit
 	ft_itoa
+
+PUT TO STDOUT
 X	ft_putchar
 X	ft_putstr
 X	ft_putendl
 X	ft_putnbr
+
+PUT TO FILE
 	ft_putchar_fd
 	ft_putstr_fd
 	ft_putendl_fd
