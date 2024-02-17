@@ -31,8 +31,8 @@ X	strncpy
 	ft_strnew
 	ft_strdel
 	ft_strclr
-	ft_striter
-	ft_striteri
+X	ft_striter
+X	ft_striteri
 	ft_strmap
 	ft_strmapi
 	ft_strequ
