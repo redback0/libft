@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 19:15:14 by njackson          #+#    #+#             */
-/*   Updated: 2024/02/09 19:32:46 by njackson         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:32:11 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ int	ft_isalpha(char c)
 	return (0);
 }
 
-
-// properly test once ft_strmap is complete
+// tested in ft_strmap

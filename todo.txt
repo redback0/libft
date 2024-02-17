@@ -19,7 +19,7 @@ X	strncpy
 	strcmp
 	strncmp
 	atoi
--	isalpha
+X	isalpha
 	isdigit
 	isalnum
 	isascii
@@ -33,7 +33,7 @@ X	strncpy
 	ft_strclr
 X	ft_striter
 X	ft_striteri
-	ft_strmap
+X	ft_strmap
 	ft_strmapi
 	ft_strequ
 	ft_strnequ
