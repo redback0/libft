@@ -6,11 +6,12 @@
 /*   By: njackson <njackson@student.42adel.org.au>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:19 by njackson          #+#    #+#             */
-/*   Updated: 2024/02/20 17:08:42 by njackson         ###   ########.fr       */
+/*   Updated: 2024/02/20 22:09:33 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // I don't think I'm allowed this?
+#include <libft.h>
 #include <stddef.h>
 
 void	*ft_memset(void *str, int c, size_t n)
@@ -19,7 +20,7 @@ void	*ft_memset(void *str, int c, size_t n)
 
 	p = (unsigned char *) str;
 	while (n != 0)
-		p[--n] = (unsigned char)c;
+		p[--n] = c;
 	return (str);
 }
 
