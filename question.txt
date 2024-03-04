@@ -1,0 +1,5 @@
+
+ft_memset
+	Am I allowed to use the stddef.h header? Or do I have to define size_t, or just use long int.
+
+
