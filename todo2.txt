@@ -1,10 +1,10 @@
-	isalpha
+X	isalpha
 	isdigit
 	isalnum
 	isascii
 	isprint
-	strlen
-	memset
+X	strlen
+X	memset
 	bzero
 	memcpy
 	memmove
@@ -20,14 +20,14 @@
 	strnstr
 	atoi
 	calloc
-	strdup
+X	strdup
 	ft_substr
 	ft_strjoin
 	ft_strtrim
 	ft_split
 	ft_itoa
-	ft_strmapi
-	ft_striteri
+X	ft_strmapi
+X	ft_striteri
 	ft_putchar_fd
 	ft_putstr_fd
 	ft_putendl_fd
@@ -43,3 +43,7 @@
 	ft_lstclear
 	ft_lstiter
 	ft_lstmap
+
+
+EXTRA
+strcpy
