@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 13:17:02 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/06 09:57:46 by njackson         ###   ########.fr       */
+/*   Created: 2024/02/17 13:33:57 by njackson          #+#    #+#             */
+/*   Updated: 2024/03/06 12:08:40 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd);
-
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	signed char	sign;
+	unsigned int	i;
+	char			*out;
 
-	sign = 1;
-	if (n < 0)
+	out = (char *) malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	i = 0;
+	while (s[i])
 	{
-		write(1, "-", 1);
-		sign = -1;
+		out[i] = f(i, s[i]);
+		i++;
 	}
-	if (n >= 10 || n <= -10)
-		ft_putnbr(n / (sign * 10), fd);
-	ft_putchar((sign * (n % 10)) + '0', fd);
+	return (out);
 }
-
-/*
-#include <stdlib.h>
-
-int	main(int argc, char *argv[])
-{
-	while (argc-- > 1)
-	{
-		argv++;
-		ft_putnbr(atoi(*argv));
-		ft_putchar('\n');
-	}
-}
-*/

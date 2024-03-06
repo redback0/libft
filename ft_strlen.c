@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 11:07:18 by njackson          #+#    #+#             */
-/*   Updated: 2024/02/17 11:34:10 by njackson         ###   ########.fr       */
+/*   Created: 2024/01/27 12:43:51 by njackson          #+#    #+#             */
+/*   Updated: 2024/03/06 12:04:20 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f) (char *))
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	while (*s)
-	{
-		f(s);
-		s++;
-	}
+	int	len;
+
+	len = -1;
+	while (str[++len])
+		;
+	return (len);
 }
-
-/*
-//TESTING STUFF ***************************************************************
-
-#include <stdio.h>
-
-void	ft_isalpha_test(char *c)
-{
-	printf("Running with %c\n", *c);
-}
-
-int	main(int argc, char *argv[])
-{
-	(void) argc;
-	while (*(++argv))
-	{
-		ft_striter(*argv, &ft_isalpha_test);
-	}
-}
-*/

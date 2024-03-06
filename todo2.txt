@@ -1,5 +1,5 @@
 X	isalpha
-	isdigit
+X	isdigit
 	isalnum
 	isascii
 	isprint
@@ -18,7 +18,7 @@ X	memset
 	memchr
 	memcmp
 	strnstr
-	atoi
+X	atoi
 	calloc
 X	strdup
 	ft_substr
@@ -28,10 +28,10 @@ X	strdup
 	ft_itoa
 X	ft_strmapi
 X	ft_striteri
-	ft_putchar_fd
-	ft_putstr_fd
-	ft_putendl_fd
-	ft_putnbr_fd
+X	ft_putchar_fd
+X	ft_putstr_fd
+X	ft_putendl_fd
+X	ft_putnbr_fd
 
 	BONUS
 	ft_lstnew
@@ -46,4 +46,9 @@ X	ft_striteri
 
 
 EXTRA
+NOTE: SHOULD BE REMOVED FOR COMPLETED PROJECT
 strcpy
+ft_strmap
+ft_striter
+ft_strncpy
+
