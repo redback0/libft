@@ -9,7 +9,7 @@ X	bzero
 X	memcpy
 X	memmove
 X	strlcpy
-	strlcat
+X	strlcat
 X	toupper
 X	tolower
 	strchr
