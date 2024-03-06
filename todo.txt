@@ -7,7 +7,7 @@ X	strlen
 X	memset
 X	bzero
 X	memcpy
-	memmove
+X	memmove
 X	strlcpy
 	strlcat
 X	toupper
@@ -43,12 +43,3 @@ BONUS
 	ft_lstclear
 	ft_lstiter
 	ft_lstmap
-
-
-EXTRA
-NOTE: SHOULD BE REMOVED FOR COMPLETED PROJECT
-strcpy
-ft_strmap
-ft_striter
-ft_strncpy
-

@@ -6,13 +6,11 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:59:52 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/06 15:26:38 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:09:13 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// I NEED TO ASK IF I HAVE TO MALLOC EXACTLY THE RIGHT AMOUNT OF MEMORY
 
 static int	log_base_n(int n, int base)
 {
