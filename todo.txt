@@ -19,7 +19,7 @@ X	strlcpy
 	memcmp
 	strnstr
 X	atoi
-	calloc
+X	calloc
 X	strdup
 	ft_substr
 	ft_strjoin
