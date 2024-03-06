@@ -1,66 +1,54 @@
-X	memset
-	bzero
-	memcpy
-	memccpy
-	memmove
-	memchr
-	memcmp
-X	strlen
-X	strdup
-X	strcpy
-X	strncpy
-	strcat
-	strncat
-	strlcat
-	strchr
-	strrchr
-	strstr
-	strnstr
-	strcmp
-	strncmp
-	atoi
 X	isalpha
-	isdigit
+X	isdigit
 	isalnum
 	isascii
 	isprint
+X	strlen
+X	memset
+	bzero
+	memcpy
+	memmove
+X	strlcpy
+	strlcat
 	toupper
 	tolower
-	ft_memalloc
-	ft_memdel
-	ft_strnew
-	ft_strdel
-	ft_strclr
-X	ft_striter
-X	ft_striteri
-X	ft_strmap
-X	ft_strmapi
-	ft_strequ
-	ft_strnequ
-	ft_strsub
+	strchr
+	strrchr
+	strncmp
+	memchr
+	memcmp
+	strnstr
+X	atoi
+	calloc
+X	strdup
+	ft_substr
 	ft_strjoin
 	ft_strtrim
-	ft_strsplit
+	ft_split
 	ft_itoa
+X	ft_strmapi
+X	ft_striteri
+X	ft_putchar_fd
+X	ft_putstr_fd
+X	ft_putendl_fd
+X	ft_putnbr_fd
 
-PUT TO STDOUT
-X	ft_putchar
-X	ft_putstr
-X	ft_putendl
-X	ft_putnbr
-
-PUT TO FILE
-	ft_putchar_fd
-	ft_putstr_fd
-	ft_putendl_fd
-	ft_putnbr_fd
-
-BONUS
-linked lists!
-
+	BONUS
 	ft_lstnew
+	ft_lstadd_front
+	ft_lstsize
+	ft_lstlast
+	ft_lstadd_back
 	ft_lstdelone
-	ft_lstdel
-	ft_lstadd
+	ft_lstclear
 	ft_lstiter
 	ft_lstmap
+
+
+EXTRA
+NOTE: SHOULD BE REMOVED FOR COMPLETED PROJECT
+strcpy
+ft_strmap
+ft_striter
+ft_strncpy
+
