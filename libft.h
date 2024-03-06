@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/06 12:10:22 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:19:51 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
 // check man for this
 void	*ft_memmove(void *dst, const void *src, size_t len);
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
+size_t	ft_strlcpy(
+			char *restrict dst, const char *restrict src, size_t dstsize);
+size_t	ft_strlcat(
+			char *restrict dst, const char *restrict src, size_t dstsize);
 
 int		ft_toupper(int c);
 int		ft_tolower(int c);

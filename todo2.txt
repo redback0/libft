@@ -8,7 +8,7 @@ X	memset
 	bzero
 	memcpy
 	memmove
-	strlcpy
+X	strlcpy
 	strlcat
 	toupper
 	tolower
