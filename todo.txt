@@ -10,8 +10,8 @@ X	bzero
 	memmove
 X	strlcpy
 	strlcat
-	toupper
-	tolower
+X	toupper
+X	tolower
 	strchr
 	strrchr
 	strncmp
