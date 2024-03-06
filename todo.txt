@@ -12,8 +12,8 @@ X	strlcpy
 X	strlcat
 X	toupper
 X	tolower
-	strchr
-	strrchr
+X	strchr
+X	strrchr
 	strncmp
 	memchr
 	memcmp
