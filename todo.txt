@@ -6,7 +6,7 @@ X	isprint
 X	strlen
 X	memset
 X	bzero
-	memcpy
+X	memcpy
 	memmove
 X	strlcpy
 	strlcat
