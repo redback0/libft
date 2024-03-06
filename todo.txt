@@ -1,8 +1,8 @@
 X	isalpha
 X	isdigit
-	isalnum
-	isascii
-	isprint
+X	isalnum
+X	isascii
+X	isprint
 X	strlen
 X	memset
 	bzero
@@ -33,7 +33,7 @@ X	ft_putstr_fd
 X	ft_putendl_fd
 X	ft_putnbr_fd
 
-	BONUS
+BONUS
 	ft_lstnew
 	ft_lstadd_front
 	ft_lstsize
