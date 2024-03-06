@@ -6,14 +6,14 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:17:43 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/06 15:27:47 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:05:00 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_strlcpy(
-			char *restrict dst, const char *restrict src, size_t dstsize)
+			char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
