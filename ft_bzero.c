@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:52:16 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/06 13:54:30 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:30:29 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	bzero(void *s, size_t n)
 	unsigned char	*p;
 
 	p = (unsigned char *)s;
-	while(n-- >= 0)
+	while (n-- >= 0)
 		*(p--) = 0;
 }
