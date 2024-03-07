@@ -22,7 +22,7 @@ X	atoi
 X	calloc
 X	strdup
 X	ft_substr
-	ft_strjoin
+X	ft_strjoin
 	ft_strtrim
 	ft_split
 X	ft_itoa
