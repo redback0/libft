@@ -21,7 +21,7 @@ X	strnstr
 X	atoi
 X	calloc
 X	strdup
-	ft_substr
+X	ft_substr
 	ft_strjoin
 	ft_strtrim
 	ft_split
