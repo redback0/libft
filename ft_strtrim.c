@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 15:33:34 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/07 16:03:15 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:21:00 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[i])
 	{
 		if (!ft_strchr(set, s1[i]))
-		{
-			out[j] = s1[i];
-			j++;
-		}
+			out[j++] = s1[i];
 		i++;
 	}
 	return (out);

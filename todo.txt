@@ -24,7 +24,7 @@ X	strdup
 X	ft_substr
 X	ft_strjoin
 X	ft_strtrim
-	ft_split
+X	ft_split
 X	ft_itoa
 X	ft_strmapi
 X	ft_striteri
