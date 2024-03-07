@@ -15,7 +15,7 @@ X	tolower
 X	strchr
 X	strrchr
 X	strncmp
-	memchr
+X	memchr
 	memcmp
 	strnstr
 X	atoi
