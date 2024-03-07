@@ -17,7 +17,7 @@ X	strrchr
 X	strncmp
 X	memchr
 X	memcmp
-	strnstr
+X	strnstr
 X	atoi
 X	calloc
 X	strdup
