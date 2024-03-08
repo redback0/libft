@@ -37,7 +37,7 @@ BONUS
 X	ft_lstnew
 X	ft_lstadd_front
 X	ft_lstsize
-	ft_lstlast
+X	ft_lstlast
 	ft_lstadd_back
 	ft_lstdelone
 	ft_lstclear
