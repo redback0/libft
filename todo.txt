@@ -41,5 +41,5 @@ X	ft_lstlast
 X	ft_lstadd_back
 X	ft_lstdelone
 X	ft_lstclear
-	ft_lstiter
+X	ft_lstiter
 	ft_lstmap
