@@ -39,7 +39,7 @@ X	ft_lstadd_front
 X	ft_lstsize
 X	ft_lstlast
 X	ft_lstadd_back
-	ft_lstdelone
+?	ft_lstdelone
 	ft_lstclear
 	ft_lstiter
 	ft_lstmap
