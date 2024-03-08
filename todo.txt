@@ -42,4 +42,4 @@ X	ft_lstadd_back
 X	ft_lstdelone
 X	ft_lstclear
 X	ft_lstiter
-	ft_lstmap
+X	ft_lstmap
