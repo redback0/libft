@@ -34,7 +34,7 @@ X	ft_putendl_fd
 X	ft_putnbr_fd
 
 BONUS
-	ft_lstnew
+X	ft_lstnew
 	ft_lstadd_front
 	ft_lstsize
 	ft_lstlast
