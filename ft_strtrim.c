@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 15:33:34 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/08 10:21:00 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:05:41 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	j;
 
+	j = ft_strlen(s1);
+	while (ft_strchr(set, s1[--j]))
+		;
 	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		if (!ft_strchr(set, s1[i]))
-			j++;
-		i++;
-	}
-	if (j < 1)
-		return (0);
-	out = (char *)malloc((j + 1) * sizeof(char));
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		if (!ft_strchr(set, s1[i]))
-			out[j++] = s1[i];
-		i++;
-	}
+	while (ft_strchr(set, s1[i++]))
+		j--;
+	out = (char *)malloc((j + 2) * sizeof(char));
+	ft_strlcpy(out, s1 + i - 1, j + 2);
 	return (out);
 }

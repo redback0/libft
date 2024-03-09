@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:05:19 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/08 10:18:05 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:45:57 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	**ft_split_alloc(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -76,8 +76,6 @@ static char	**ft_split_alloc(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 	}
-	if (j < 1)
-		return (0);
 	return ((char **)malloc((j + 1) * sizeof(char *)));
 }
 
@@ -88,8 +86,6 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 
 	out = ft_split_alloc(s, c);
-	if (!out)
-		return (0);
 	j = 0;
 	while (*s)
 	{
