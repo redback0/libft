@@ -11,15 +11,6 @@ SRC = ft_atoi.c \
 	  ft_isdigit.c \
 	  ft_isprint.c \
 	  ft_itoa.c \
-	  ft_lstadd_back.c \
-	  ft_lstadd_front.c \
-	  ft_lstclear.c \
-	  ft_lstdelone.c \
-	  ft_lstiter.c \
-	  ft_lstlast.c \
-	  ft_lstmap.c \
-	  ft_lstnew.c \
-	  ft_lstsize.c \
 	  ft_memchr.c \
 	  ft_memcmp.c \
 	  ft_memcpy.c \
@@ -46,19 +37,36 @@ SRC = ft_atoi.c \
 	  ft_tolower.c \
 	  ft_toupper.c
 
+SRC_BONUS = ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			ft_lstsize.c \
+
 OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
+
+bonus: $(NAME) $(OBJ_BONUS)
+	ar -r $(NAME) $(OBJ_BONUS)
 
 $(NAME): $(OBJ)
 	ar -r $(NAME) $(OBJ)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
