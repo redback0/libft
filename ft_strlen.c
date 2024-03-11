@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:43:51 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/11 10:52:05 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:39:33 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlen(const char *str)
 	if (!str)
 		return (0);
 	len = 0;
-	while (str[++len])
+	while (str[len])
 		len++;
 	return (len);
 }

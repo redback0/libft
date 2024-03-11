@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 13:40:26 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/09 12:52:01 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:46:16 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*out;
 	size_t	s_len;
 
+	if (!s)
+		return (0);
 	s_len = ft_strlen(s);
 	if (s_len - start + 1 < len)
 		len = s_len - start + 1;
