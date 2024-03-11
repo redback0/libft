@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:02:21 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/06 12:01:43 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/11 10:49:22 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putstr_fd(char *str, int fd)
 {
-	while (*str)
-		write(fd, str++, 1);
+	if (str)
+		while (*str)
+			write(fd, str++, 1);
 }

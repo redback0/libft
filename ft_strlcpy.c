@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:17:43 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/09 12:32:23 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/11 10:56:34 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(
 {
 	size_t	i;
 
+	if (!dst || !src)
+		return (0);
 	i = 0;
 	while (i + 1 < dstsize && src[i])
 	{
