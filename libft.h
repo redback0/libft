@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/14 10:56:53 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:01:48 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-int	ft_putchar_fd(char c, int fd);
-int	ft_putstr_fd(char *s, int fd);
-int	ft_putendl_fd(char *s, int fd);
-int	ft_putnbr_fd(int n, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_putendl_fd(char *s, int fd);
+int		ft_putnbr_fd(int n, int fd);
 
 // ADD BONUS LATER?
 
