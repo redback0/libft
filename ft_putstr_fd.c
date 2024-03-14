@@ -6,15 +6,21 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:02:21 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/11 10:49:22 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/14 11:00:57 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+int	ft_putstr_fd(char *str, int fd)
 {
+	size_t	i;
+
 	if (str)
-		while (*str)
-			write(fd, str++, 1);
+	{
+		i = ft_strlen(str);
+		write(fd, str, i);
+		return (i);
+	}
+	return (0);
 }
