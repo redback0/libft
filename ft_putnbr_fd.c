@@ -6,16 +6,16 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:17:02 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/14 10:59:28 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/15 11:56:17 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(long long n, int fd)
 {
 	signed char	sign;
-	int			out_num;
+	long long	out_num;
 
 	sign = 1;
 	out_num = 0;
