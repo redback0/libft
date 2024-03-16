@@ -52,7 +52,7 @@ SRC_BONUS = ft_lstadd_back.c \
 OBJ = $(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
-all: $(NAME)
+all: $(NAME) bonus
 
 bonus: $(NAME) $(OBJ_BONUS)
 	ar rc $(NAME) $(OBJ_BONUS)
