@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:11:23 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/09 12:41:09 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/16 22:03:01 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[dstlen + i] = src[i];
 		i++;
 	}
-	if (dstsize)
+	if (dstsize && dstlen < dstsize)
 		dst[dstlen + i] = '\0';
 	while (src[i])
 		i++;

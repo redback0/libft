@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:17:02 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/15 11:56:17 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:55:57 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_putnbr_fd(long long n, int fd)
 	out_num = 0;
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		write(fd, "-", 1);
 		out_num = 1;
 		sign = -1;
 	}

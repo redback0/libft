@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:33:57 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/08 16:39:17 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/16 22:04:53 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (0);
-	out = (char *) malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	out = (char *)calloc(ft_strlen(s) + 1, sizeof(char));
 	i = 0;
 	while (s[i])
 	{
