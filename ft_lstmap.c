@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:32:30 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/11 10:58:43 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/18 10:30:44 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		outi = outi->next;
 		lst = lst->next;
 	}
-	outi = out->next;
-	del(out->content);
-	free(out);
-	return (outi);
+	return (out);
 }

@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:05:19 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/09 14:24:50 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/18 10:57:14 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	**ft_split_alloc(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -79,15 +79,23 @@ static char	**ft_split_alloc(char const *s, char c)
 	return ((char **)malloc((j + 1) * sizeof(char *)));
 }
 
+static char	**ft_split_unalloc(char **strs, size_t w)
+{
+	while (w > 0)
+		free(strs[--w]);
+	free(strs);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**out;
 	size_t	i;
 	size_t	j;
 
-	if (!s)
-		return (0);
 	out = ft_split_alloc(s, c);
+	if (!out)
+		return (0);
 	j = 0;
 	while (*s)
 	{
@@ -96,13 +104,12 @@ char	**ft_split(char const *s, char c)
 		if (*s == '\0')
 			break ;
 		i = 0;
-		while (*s && *s != c)
-		{
+		while (s[i] && s[i] != c)
 			i++;
-			s++;
-		}
-		out[j] = (char *)malloc((i + 1) * sizeof(char));
-		ft_strlcpy(out[j++], s - i, i + 1);
+		out[j] = ft_substr(s, 0, i);
+		if (!out[j++])
+			return (ft_split_unalloc(out, j));
+		s += i;
 	}
 	out[j] = 0;
 	return (out);
