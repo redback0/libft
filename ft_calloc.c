@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:34:24 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/09 12:22:32 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/18 13:53:26 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*out;
 
 	out = (void *)malloc(count * size);
+	if (!out)
+		return (0);
 	ft_bzero(out, count * size);
 	return (out);
 }
