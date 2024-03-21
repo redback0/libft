@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:05:19 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/21 21:27:21 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/21 21:43:04 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static char	**ft_split_alloc(char const *s, char c, size_t *x)
 	if (!out)
 		return (0);
 	out[j] = 0;
-	*x = 0;
+	*x = -1;
 	return (out);
 }
 
@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 
 	out = ft_split_alloc(s, c, &j);
-	while (s && *s)
+	while (out && s && *s)
 	{
 		if (*s++ != c)
 		{
@@ -100,11 +100,11 @@ char	**ft_split(char const *s, char c)
 			i = 0;
 			while (s[i] && s[i] != c)
 				i++;
-			out[j] = ft_substr(s, 0, i);
-			if (!out[j++])
+			out[++j] = ft_substr(s, 0, i);
+			if (!out[j])
 			{
 				while (j > 0)
-					free(out[j]);
+					free(out[--j]);
 				free(out);
 				return (0);
 			}
