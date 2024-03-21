@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:05:19 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/18 10:57:14 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/21 21:27:21 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,11 @@ char	**ft_split(char const *s, char c)
 }
 */
 
-static char	**ft_split_alloc(char const *s, char c)
+static char	**ft_split_alloc(char const *s, char c, size_t *x)
 {
 	size_t	i;
 	size_t	j;
+	char	**out;
 
 	i = 0;
 	j = 0;
@@ -76,15 +77,12 @@ static char	**ft_split_alloc(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 	}
-	return ((char **)malloc((j + 1) * sizeof(char *)));
-}
-
-static char	**ft_split_unalloc(char **strs, size_t w)
-{
-	while (w > 0)
-		free(strs[--w]);
-	free(strs);
-	return (0);
+	out = (char **)malloc((j + 1) * sizeof(char *));
+	if (!out)
+		return (0);
+	out[j] = 0;
+	*x = 0;
+	return (out);
 }
 
 char	**ft_split(char const *s, char c)
@@ -93,24 +91,25 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	out = ft_split_alloc(s, c);
-	if (!out)
-		return (0);
-	j = 0;
-	while (*s)
+	out = ft_split_alloc(s, c, &j);
+	while (s && *s)
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s == '\0')
-			break ;
-		i = 0;
-		while (s[i] && s[i] != c)
-			i++;
-		out[j] = ft_substr(s, 0, i);
-		if (!out[j++])
-			return (ft_split_unalloc(out, j));
-		s += i;
+		if (*s++ != c)
+		{
+			s--;
+			i = 0;
+			while (s[i] && s[i] != c)
+				i++;
+			out[j] = ft_substr(s, 0, i);
+			if (!out[j++])
+			{
+				while (j > 0)
+					free(out[j]);
+				free(out);
+				return (0);
+			}
+			s += i;
+		}
 	}
-	out[j] = 0;
 	return (out);
 }
