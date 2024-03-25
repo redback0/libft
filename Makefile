@@ -20,6 +20,7 @@ SRC = ft_atoi.c \
 	  ft_putchar_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_base_fd.c \
+	  ft_putunbr_base_fd.c \
 	  ft_putnbr_fd.c \
 	  ft_putstr_fd.c \
 	  ft_split.c \

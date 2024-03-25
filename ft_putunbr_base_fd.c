@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:45:40 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/25 11:49:37 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:56:10 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_putunbr_base_fd(unsigned long long n, char *base, int fd)
 		return (0);
 	b = ft_strlen(base);
 	out_num = 0;
-	if (n >= b)
+	if (n >= (unsigned long long)b)
 		out_num += ft_putnbr_base_fd(n / b, base, fd);
 	ft_putchar_fd((base[n % b]), fd);
 	return (out_num + 1);
