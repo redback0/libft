@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:02:21 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/15 12:09:53 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:38:05 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int	ft_putstr_fd(char *str, int fd)
 	if (str)
 	{
 		i = ft_strlen(str);
-		write(fd, str, i);
+		if (write(fd, str, i) < 0)
+			return (-1);
 		return (i);
 	}
-	write(fd, "(null)", 6);
+	if (write(fd, "(null)", 6) < 0)
+		return (-1);
 	return (6);
 }

@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:17:02 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/25 11:22:09 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:00:16 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,49 @@
 
 static int	ft_strchrdup(char	*str)
 {
-	(void)str;
+	if (!str)
+		return (0);
+	while (*str && *(str + 1))
+	{
+		if (ft_strchr(str + 1, *str))
+			return (0);
+		str++;
+	}
 	return (1);
+}
+
+static int	setvars(signed char *sign, int *out_num, int *b, char *base)
+{
+	*b = ft_strlen(base);
+	*sign = 1;
+	*out_num = 0;
+	return (ft_strchrdup(base));
 }
 
 int	ft_putnbr_base_fd(long long n, char *base, int fd)
 {
 	signed char	sign;
-	long long	out_num;
+	int			i;
+	int			out_num;
 	int			b;
 
-	if (!ft_strchrdup(base))
-		return (0);
-	b = ft_strlen(base);
-	sign = 1;
-	out_num = 0;
+	if (!setvars(&sign, &out_num, &b, base))
+		return (-1);
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		if (write(fd, "-", 1) < 0)
+			return (-1);
 		out_num = 1;
 		sign = -1;
 	}
 	if (n >= b || n <= -b)
-		out_num += ft_putnbr_base_fd(n / (sign * b), base, fd);
-	ft_putchar_fd((sign * base[n % b]), fd);
+	{
+		i = ft_putnbr_base_fd(n / (sign * b), base, fd);
+		if (i < 0)
+			return (-1);
+		out_num += i;
+	}
+	if (ft_putchar_fd((sign * base[n % b]), fd) < 0)
+		return (-1);
 	return (out_num + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:52:39 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/14 11:01:34 by njackson         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:34:03 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (write(fd, &c, 1) < 0)
+		return (-1);
 	return (1);
 }
