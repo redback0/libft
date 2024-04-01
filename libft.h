@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/04/01 14:11:36 by njackson         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:35:38 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -64,6 +65,7 @@ int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_base_fd(long long n, char *base, int fd);
 int		ft_putunbr_base_fd(unsigned long long n, char *base, int fd);
 int		ft_putnbr_fd(long long n, int fd);
+int		ft_putptr_fd(size_t n, int fd);
 
 typedef struct s_list
 {
@@ -82,6 +84,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// FT_PRINTF THINGS
+# define HEX_UPPER "0123456789ABCDEF"
+# define HEX_LOWER "0123456789abcdef"
+
+int	ft_printf_fd(int fd, const char *format, ...);
 
 // GET NEXT LINE THINGS
 # ifndef BUFFER_SIZE

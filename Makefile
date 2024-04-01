@@ -50,6 +50,7 @@ SRC = ft_atoi.c \
 	  ft_lstsize.c \
 	  get_next_line.c \
 	  get_next_line_utils.c \
+	  ft_printf_fd \
 
 OBJ = $(SRC:.c=.o)
 
