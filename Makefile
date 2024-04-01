@@ -23,6 +23,7 @@ SRC = ft_atoi.c \
 	  ft_putunbr_base_fd.c \
 	  ft_putnbr_fd.c \
 	  ft_putstr_fd.c \
+	  ft_putptr_fd.c \
 	  ft_split.c \
 	  ft_strchr.c \
 	  ft_strdup.c \
@@ -50,7 +51,7 @@ SRC = ft_atoi.c \
 	  ft_lstsize.c \
 	  get_next_line.c \
 	  get_next_line_utils.c \
-	  ft_printf_fd \
+	  ft_printf_fd.c \
 
 OBJ = $(SRC:.c=.o)
 

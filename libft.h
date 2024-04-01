@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/04/01 14:35:38 by njackson         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:38:06 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_base_fd(long long n, char *base, int fd);
 int		ft_putunbr_base_fd(unsigned long long n, char *base, int fd);
 int		ft_putnbr_fd(long long n, int fd);
-int		ft_putptr_fd(size_t n, int fd);
+int		ft_putptr_fd(void * n, int fd);
 
 typedef struct s_list
 {
