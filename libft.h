@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/25 11:50:33 by njackson         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:11:36 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,24 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// GET NEXT LINE THINGS
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 256
+# endif
+
+typedef struct s_sav
+{
+	int				fd;
+	char			*buf;
+	struct s_sav	*next;
+}	t_sav;
+
+char	*get_next_line(int fd);
+// OTHER GET NEXT LINE FUNCTIONS REFERED TO IN FILE
+
+char	**get_sav_from_lst(int fd);
+void	clean_sav_lst(int fd);
+// OTHER t_sav FUNCIONS IN FILE
 
 #endif

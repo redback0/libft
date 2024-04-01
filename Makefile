@@ -48,23 +48,29 @@ SRC = ft_atoi.c \
 	  ft_lstmap.c \
 	  ft_lstnew.c \
 	  ft_lstsize.c \
+	  get_next_line.c \
+	  get_next_line_utils.c \
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@echo "CREATING ARCHIVE"
+	@ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "COMPILING $@"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@echo "REMOVING OBJECT FILES"
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "REMOVING ARCHIVE"
+	@rm -f $(NAME)
 
-re: fclean all bonus
+re: fclean all
 
 .PHONY: all clean fclean re
