@@ -21,9 +21,14 @@ SRC = ft_atoi.c			ft_bzero.c			ft_calloc.c \
 	  get_next_line.c	get_next_line_utils.c \
 	  ft_printf.c		ft_abs.c			ft_arrmax.c \
 	  ft_arrmin.c		ft_atoi_strict.c	ft_log_base_n.c \
-	  ft_memswap.c
+	  ft_memswap.c		ft_log.c
 
 OBJ = $(SRC:.c=.o)
+
+LOGLEVEL ?= 4
+LOGERROR ?= 4
+
+DEFINES = -DLOGLEVEL=$(LOGLEVEL) -DLOGERROR=$(LOGERROR)
 
 all: $(NAME)
 
@@ -33,7 +38,7 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	@echo "COMPILING $@"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(DEFINES) -c $< -o $@
 
 clean:
 	@echo "REMOVING OBJECT FILES"

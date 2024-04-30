@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/04/30 14:01:24 by njackson         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:59:04 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 # define HEX_UPPER "0123456789ABCDEF"
 # define HEX_LOWER "0123456789abcdef"
 
-int	ft_printf_fd(int fd, const char *format, ...);
+int		ft_printf(const char *format, ...);
+int		ft_printf_fd(int fd, const char *format, ...);
+int		ft_printf_args(int fd, const char *format, va_list args);
+int		ft_log(int level, const char *format, ...);
 
 // GET NEXT LINE THINGS
 # ifndef BUFFER_SIZE
