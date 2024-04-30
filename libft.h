@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/04/01 14:38:06 by njackson         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:01:24 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
-// check man for this
 void	*ft_memmove(void *dst, const void *src, size_t len);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -44,10 +43,12 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	ft_memswap(void *a, void *b, size_t n);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 int		ft_atoi(const char *str);
+int		ft_atoi_strict(const char *str, int *err);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
@@ -66,6 +67,19 @@ int		ft_putnbr_base_fd(long long n, char *base, int fd);
 int		ft_putunbr_base_fd(unsigned long long n, char *base, int fd);
 int		ft_putnbr_fd(long long n, int fd);
 int		ft_putptr_fd(void * n, int fd);
+
+// ARRAY STUFF
+
+// these two will give the last occurence of the min/max number
+int		ft_arrmax(int *arr, int size);
+int		ft_arrmin(int *arr, int size);
+
+// MATH FUNCTIONS
+
+int		ft_abs(int n);
+int		ft_log_base_n(int n, int b);
+
+// LISTS
 
 typedef struct s_list
 {
