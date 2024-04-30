@@ -30,22 +30,28 @@ LOGERROR ?= 4
 
 DEFINES = -DLOGLEVEL=$(LOGLEVEL) -DLOGERROR=$(LOGERROR)
 
+C_GRAY = \033[1;30m
+C_ORANGE = \033[0;33m
+C_RED = \033[0;31m
+NC = \033[0m
+PREFIX = $(C_ORANGE)<$(NAME)>
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "CREATING ARCHIVE"
+	@printf "$(PREFIX) $(NC)CREATING $(NAME)\n"
 	@ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	@echo "COMPILING $@"
+	@printf "$(PREFIX) $(C_GRAY)COMPILING $@$(NC)\n"
 	@$(CC) $(CFLAGS) $(DEFINES) -c $< -o $@
 
 clean:
-	@echo "REMOVING OBJECT FILES"
+	@printf "$(PREFIX) $(C_RED)REMOVING OBJECT FILES$(NC)\n"
 	@rm -f $(OBJ)
 
 fclean: clean
-	@echo "REMOVING ARCHIVE"
+	@printf "$(PREFIX) $(C_RED)REMOVING ARCHIVE$(NC)\n"
 	@rm -f $(NAME)
 
 re: fclean all
