@@ -1,5 +1,12 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+
+ifeq ($(DEBUG), 1)
+	CFLAGS = -Wall -Wextra -Werror -g
+	export DEBUG
+else
+	CFLAGS = -Wall -Wextra -Werror
+endif
+
 NAME = libft.a
 
 SRC = ft_atoi.c			ft_bzero.c			ft_calloc.c \
@@ -44,7 +51,7 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	@printf "$(PREFIX) $(C_GRAY)COMPILING $@$(NC)\n"
-	@$(CC) $(CFLAGS) $(DEFINES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(DEFINES) -MMD -c $< -o $@
 
 clean:
 	@printf "$(PREFIX) $(C_RED)REMOVING OBJECT FILES$(NC)\n"
