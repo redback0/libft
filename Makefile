@@ -1,10 +1,10 @@
 CC = cc
 
 ifeq ($(DEBUG), 1)
-	CFLAGS = -Wall -Wextra -Werror -g
+	CFLAGS = -Wall -Wextra -Werror -g -DDEBUG=1
 	export DEBUG
 else
-	CFLAGS = -Wall -Wextra -Werror
+	CFLAGS = -Wall -Wextra -Werror -DDEBUG=0
 endif
 
 NAME = libft.a
@@ -32,11 +32,6 @@ SRC = ft_atoi.c			ft_bzero.c			ft_calloc.c \
 
 OBJ = $(SRC:.c=.o)
 
-LOGLEVEL ?= 4
-LOGERROR ?= 4
-
-DEFINES = -DLOGLEVEL=$(LOGLEVEL) -DLOGERROR=$(LOGERROR)
-
 C_GRAY = \033[1;30m
 C_ORANGE = \033[0;33m
 C_RED = \033[0;31m
@@ -51,7 +46,7 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	@printf "$(PREFIX) $(C_GRAY)COMPILING $@$(NC)\n"
-	@$(CC) $(CFLAGS) $(DEFINES) -MMD -c $< -o $@
+	@$(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean:
 	@printf "$(PREFIX) $(C_RED)REMOVING OBJECT FILES$(NC)\n"

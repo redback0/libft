@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/05/01 19:34:33 by njackson         ###   ########.fr       */
+/*   Updated: 2024/05/09 20:54:40 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // FT_PRINTF THINGS
 # define HEX_UPPER "0123456789ABCDEF"
 # define HEX_LOWER "0123456789abcdef"
+# ifndef DEBUG
+#  define DEBUG 0
+# endif
 
 int		ft_printf(const char *format, ...);
 int		ft_printf_fd(int fd, const char *format, ...);
