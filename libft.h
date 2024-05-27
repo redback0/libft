@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/05/15 20:51:44 by njackson         ###   ########.fr       */
+/*   Updated: 2024/05/27 15:05:16 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,10 +132,5 @@ typedef struct s_sav
 }	t_sav;
 
 char			*get_next_line(int fd);
-// OTHER GET NEXT LINE FUNCTIONS REFERED TO IN FILE
-
-char			**get_sav_from_lst(int fd);
-void			clean_sav_lst(int fd);
-// OTHER t_sav FUNCIONS IN FILE
 
 #endif

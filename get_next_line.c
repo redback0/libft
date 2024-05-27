@@ -3,152 +3,135 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 11:29:21 by njackson          #+#    #+#             */
-/*   Updated: 2024/05/09 19:59:59 by njackson         ###   ########.fr       */
+/*   Created: 2024/05/22 13:35:44 by njackson          #+#    #+#             */
+/*   Updated: 2024/05/27 15:10:38 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*read_buf(int fd, char **sav);
-char	*split_buf(char **buf, int fd);
-char	*get_sav(char **buf, char *out, size_t nl);
-char	*add_buf(char *s1, char *s2);
+static char	*join_buff(char *sav, char *buf)
+{
+	char	*out;
+	int		s_len;
+	int		b_len;
+	int		i;
+
+	s_len = ft_strlen(sav);
+	b_len = ft_strlen(buf);
+	out = (char *)malloc((s_len + b_len + 1) * sizeof(char));
+	i = 0;
+	while (i < s_len)
+	{
+		out[i] = sav[i];
+		i++;
+	}
+	while (i - s_len < b_len)
+	{
+		out[i] = buf[i - s_len];
+		i++;
+	}
+	if (sav)
+		free(sav);
+	out[i] = 0;
+	return (out);
+}
+
+static char	*read_buffer(int fd, char *buf, char *sav)
+{
+	int	bytes;
+	int	i;
+
+	i = 0;
+	while (1)
+	{
+		while (sav && sav[i] != '\n' && sav[i])
+			i++;
+		if (sav && sav[i++] == '\n')
+			break ;
+		bytes = read(fd, buf, BUFFER_SIZE);
+		if (bytes < 0)
+		{
+			free(buf);
+			if (sav)
+				free(sav);
+			return (0);
+		}
+		if (bytes == 0)
+			break ;
+		buf[bytes] = 0;
+		sav = join_buff(sav, buf);
+	}
+	free(buf);
+	return (sav);
+}
+
+static char	*ft_str_realloc(char *str)
+{
+	int		i;
+	char	*out;
+
+	i = ft_strlen(str);
+	out = malloc(i + 1);
+	out[i] = 0;
+	i = 0;
+	while (str[i])
+	{
+		out[i] = str[i];
+		i++;
+	}
+	free(str);
+	return (out);
+}
+
+static char	*split_line(char *line, char **sav)
+{
+	int		nl_i;
+	int		l_len;
+	int		i;
+
+	l_len = ft_strlen(line);
+	nl_i = 0;
+	while (line && line[nl_i] && line[nl_i] != '\n')
+		nl_i++;
+	if (nl_i >= l_len - 1)
+	{
+		*sav = 0;
+		return (line);
+	}
+	*sav = (char *)malloc((l_len - nl_i + 1) * sizeof(char));
+	i = 0;
+	while (i < l_len - nl_i)
+	{
+		(*sav)[i] = line[nl_i + 1 + i];
+		i++;
+	}
+	(*sav)[i] = 0;
+	line[nl_i + 1] = 0;
+	line = ft_str_realloc(line);
+	return (line);
+}
 
 char	*get_next_line(int fd)
 {
-	char			**sav;
-	char			*out;
-	size_t			i;
+	static char	*sav[64];
+	char		*line;
+	char		*buf;
 
-	sav = get_sav_from_lst(fd);
-	i = 0;
-	while (!*sav || (*sav)[i] != '\n')
-	{
-		if (!*sav || !(*sav)[i])
-		{
-			out = read_buf(fd, sav);
-			if (!out)
-				break ;
-			if (!*sav)
-				*sav = out;
-			else
-				*sav = add_buf(*sav, out);
-		}
-		else
-			i++;
-	}
-	if (*sav)
-		return (split_buf(sav, fd));
-	clean_sav_lst(fd);
-	return (0);
-}
-
-char	*read_buf(int fd, char **sav)
-{
-	char	*buf;
-	ssize_t	bytes_read;
-
-	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buf)
+	if (fd < 0 || fd >= 64)
 		return (0);
-	bytes_read = read(fd, buf, BUFFER_SIZE);
-	if (bytes_read <= 0)
+	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (read(fd, buf, 0) != 0)
 	{
 		free(buf);
-		buf = 0;
-	}
-	else
-		buf[bytes_read] = 0;
-	if (bytes_read < 0)
-	{
-		free(*sav);
-		*sav = 0;
-	}
-	return (buf);
-}
-
-char	*split_buf(char **buf, int fd)
-{
-	char	*out;
-	size_t	len_out;
-
-	len_out = 0;
-	while (*buf && (*buf)[len_out])
-	{
-		if ((*buf)[len_out++] == '\n')
-		{
-			out = (char *)ft_calloc((len_out + 1), sizeof(char));
-			if (!out)
-				return (0);
-			out = get_sav(buf, out, len_out);
-			clean_sav_lst(fd);
-			return (out);
-		}
-	}
-	out = *buf;
-	*buf = 0;
-	clean_sav_lst(fd);
-	if (out && !*out)
-	{
-		free(out);
+		if (sav[fd])
+			free(sav[fd]);
+		sav[fd] = 0;
 		return (0);
 	}
-	return (out);
-}
-
-char	*get_sav(char **buf, char *out, size_t nl)
-{
-	char	*sav;
-	size_t	i;
-
-	i = nl;
-	while (i-- > 0)
-		out[i] = (*buf)[i];
-	i = nl;
-	while ((*buf)[i])
-		i++;
-	sav = (char *)malloc((i - nl + 1) * sizeof(char));
-	if (!sav)
-	{
-		free(out);
-		return (0);
-	}
-	i = 0;
-	while ((*buf)[nl])
-		sav[i++] = (*buf)[nl++];
-	sav[i] = '\0';
-	free(*buf);
-	*buf = sav;
-	return (out);
-}
-
-char	*add_buf(char *s1, char *s2)
-{
-	size_t	i;
-	size_t	j;
-	size_t	len;
-	char	*out;
-
-	if (!s2)
-		return (s1);
-	len = 0;
-	while (s1[len])
-		len++;
-	i = 0;
-	while (s2[i++])
-		len++;
-	out = (char *)malloc((len + 1) * sizeof(char));
-	i = -1;
-	while (s1[++i])
-		out[i] = s1[i];
-	j = 0;
-	while (s2[j])
-		out[i++] = s2[j++];
-	out[i] = '\0';
-	free(s1);
-	free(s2);
-	return (out);
+	line = read_buffer(fd, buf, sav[fd]);
+	line = split_line(line, &sav[fd]);
+	return (line);
 }
