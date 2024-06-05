@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/05/27 15:05:16 by njackson         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:27:03 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,13 +123,6 @@ int				ft_log(int level, const char *format, ...);
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 256
 # endif
-
-typedef struct s_sav
-{
-	int				fd;
-	char			*buf;
-	struct s_sav	*next;
-}	t_sav;
 
 char			*get_next_line(int fd);
 

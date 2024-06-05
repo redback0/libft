@@ -32,6 +32,7 @@ SRC = ft_atoi.c			ft_bzero.c			ft_calloc.c \
 	  ft_atoi_base.c	ft_atou_base.c
 
 OBJ = $(SRC:.c=.o)
+DEP = $(SRC:.c=.d)
 
 C_GRAY = \033[1;30m
 C_ORANGE = \033[0;33m
@@ -44,6 +45,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@printf "$(PREFIX) $(NC)CREATING $(NAME)\n"
 	@ar rcs $(NAME) $(OBJ)
+
+-include $(DEP)
 
 %.o: %.c
 	@printf "$(PREFIX) $(C_GRAY)COMPILING $@$(NC)\n"

@@ -6,7 +6,7 @@
 /*   By: njackson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:05:19 by njackson          #+#    #+#             */
-/*   Updated: 2024/03/21 21:43:04 by njackson         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:17:34 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ static char	**ft_split_alloc(char const *s, char c, size_t *x)
 	if (!out)
 		return (0);
 	out[j] = 0;
-	*x = -1;
-	return (out);
+	return ((*x = -1), out);
 }
 
 char	**ft_split(char const *s, char c)
