@@ -124,6 +124,11 @@ int				ft_log(int level, const char *format, ...);
 #  define BUFFER_SIZE 256
 # endif
 
+# ifndef NUM_FD
+#  define NUM_FD 256
+// get next line won't be usable if you open more than 253 files
+# endif
+
 char			*get_next_line(int fd);
 
 #endif

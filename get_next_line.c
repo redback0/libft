@@ -116,7 +116,7 @@ static char	*split_line(char *line, char **sav)
 
 char	*get_next_line(int fd)
 {
-	static char	*sav[64];
+	static char	*sav[NUM_FD];
 	char		*line;
 	char		*buf;
 

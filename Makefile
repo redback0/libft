@@ -1,10 +1,12 @@
 CC = cc
 
+CFLAGS = -Wall -Wextra -Werror
+
 ifeq ($(DEBUG), 1)
-	CFLAGS = -Wall -Wextra -Werror -g -DDEBUG=1
+	CFLAGS += -g -DDEBUG=1
 	export DEBUG
 else
-	CFLAGS = -Wall -Wextra -Werror -DDEBUG=0
+	CFLAGS += -DDEBUG=0
 endif
 
 NAME = libft.a
@@ -43,6 +45,9 @@ PREFIX = $(C_ORANGE)<$(NAME)>
 all: $(NAME)
 
 bonus: $(NAME)
+
+list:
+	@echo $(NUM_FD)
 
 $(NAME): $(OBJ)
 	@printf "$(PREFIX) $(NC)CREATING $(NAME)\n"
