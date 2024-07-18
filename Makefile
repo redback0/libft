@@ -42,6 +42,8 @@ PREFIX = $(C_ORANGE)<$(NAME)>
 
 all: $(NAME)
 
+bonus: $(NAME)
+
 $(NAME): $(OBJ)
 	@printf "$(PREFIX) $(NC)CREATING $(NAME)\n"
 	@ar rcs $(NAME) $(OBJ)
