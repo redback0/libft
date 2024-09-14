@@ -6,7 +6,7 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:30:25 by njackson          #+#    #+#             */
-/*   Updated: 2024/09/13 17:16:27 by njackson         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:07:10 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ double	ft_atod(const char *str)
 		dec++;
 		str++;
 	}
-	return (sign * (out / ft_pow(10, dec)));
+	return (sign * (out / pow(10, dec)));
 }

@@ -6,13 +6,14 @@
 /*   By: njackson <njackson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 00:30:22 by njackson          #+#    #+#             */
-/*   Updated: 2024/09/13 16:59:08 by njackson         ###   ########.fr       */
+/*   Updated: 2024/09/14 16:56:49 by njackson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <math.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -84,7 +85,6 @@ int				ft_arrmin(int *arr, int size);
 
 // MATH FUNCTIONS
 
-int				ft_pow(int x, unsigned int y);
 int				ft_abs(int n);
 int				ft_log_base_n(int n, int b);
 
