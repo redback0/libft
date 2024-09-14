@@ -59,12 +59,13 @@ $(NAME): $(OBJ)
 
 -include $(DEP)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR:/=)
 	@printf "$(PREFIX) $(C_GRAY)COMPILING $@$(NC)\n"
 	@$(CC) $(CFLAGS) -MMD -c $< -o $@
 
-$(OBJ_DIR):
-	@mkdir $(OBJ_DIR)
+# doesn't work on macs for no apparent reason
+#$(OBJ_DIR):
+#	@mkdir $(OBJ_DIR)
 
 $(OBJ_DIR:/=):
 	@mkdir $(OBJ_DIR)
